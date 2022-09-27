@@ -45,3 +45,8 @@ CREATE TABLE treatments (
 ALTER TABLE invoice_items ADD COLUMN treatment_id INT NOT NULL;
 ALTER TABLE invoice_items ADD FOREIGN KEY(treatment_id) REFERENCES treatments(id);
 
+CREATE TABLE treatment_history (
+    medical_hist_id INT REFERENCES medical_histories(id),
+   treatment_id INT REFERENCES treatments(id),
+    PRIMARY KEY (medical_hist_id, treatment_id)
+);
