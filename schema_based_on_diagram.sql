@@ -50,3 +50,8 @@ CREATE TABLE treatment_history (
    treatment_id INT REFERENCES treatments(id),
     PRIMARY KEY (medical_hist_id, treatment_id)
 );
+
+CREATE INDEX patient_id_asc ON patients(id ASC);
+CREATE INDEX medical_hist_id_asc ON medical_histories(patient_id ASC);
+CREATE INDEX invoice_id_asc ON invoices(id ASC);
+CREATE INDEX treatment_id_asc ON treatments(id ASC);
